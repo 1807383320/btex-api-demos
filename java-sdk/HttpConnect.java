@@ -194,6 +194,18 @@ public class HttpConnect {
     }
 
     /**
+     * 邀请挖矿奖励比例信息
+     * @return
+     * @throws IOException
+     *
+     */
+
+    public static String getInviteDigReward() throws IOException {
+	    String s = asyncGet(Config.InviteDigReward, null, "get");
+	    return s;
+    }
+
+    /**
      * 我的成交历史
      *
      * @param pair      （交易市场）
@@ -205,16 +217,16 @@ public class HttpConnect {
 
     public static String MyTradeHistory(String pair, String page, String page_size) throws IOException {
 
-        HashMap<String, String> hashMap = new HashMap<String, String>();
-        hashMap.put("method", "mytrades");
-        hashMap.put("pair", pair);
-        hashMap.put("page", page);
-        hashMap.put("page_size", page_size);
-        hashMap.put("access_key", Config.access_key);
-        hashMap.put("secret_key", Config.secret_key);
+	    HashMap<String, String> hashMap = new HashMap<String, String>();
+	    hashMap.put("method", "mytrades");
+	    hashMap.put("pair", pair);
+	    hashMap.put("page", page);
+	    hashMap.put("page_size", page_size);
+	    hashMap.put("access_key", Config.access_key);
+	    hashMap.put("secret_key", Config.secret_key);
 
-        String s = asyncGet(Config.MyTradeHistory, hashMap, "post");
-        return s;
+	    String s = asyncGet(Config.MyTradeHistory, hashMap, "post");
+	    return s;
 
     }
 
@@ -230,66 +242,66 @@ public class HttpConnect {
     public static String asyncGet(String url, Map<String, String> hashMap, String method) throws IOException {
 
 
-        if (method.isEmpty()) {
-            return "";
-        }
+	    if (method.isEmpty()) {
+		    return "";
+	    }
 
-        String s1 = "";
-        try {
-            s1 = GetMd5s(hashMap);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+	    String s1 = "";
+	    try {
+		    s1 = GetMd5s(hashMap);
+	    } catch (NoSuchAlgorithmException e) {
+		    e.printStackTrace();
+	    }
 
-        if (hashMap != null) {
+	    if (hashMap != null) {
 
-            //获取map集合的所有"映射"的Set集合,这里规范每个映射的类型为Map.Entry<K, V>（于Set集合中无序存放）
-            Set<Map.Entry<String, String>> entrySet = hashMap.entrySet();
-            //新建List集合获取Set集合的所有元素（"映射"对象）（顺序与Set集合一样）
-            List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(entrySet);
-            //获取List集合的迭代器,Map.Entry<K, V>为迭代元素的类型
-            Iterator<Map.Entry<String, String>> iter = list.iterator();
-            FormBody.Builder builder = new FormBody.Builder();
-            for (int i = 0; i < list.size(); i++) {
-                builder.add(list.get(i).getKey(), list.get(i).getValue());
-            }
-            builder.add("sign", s1);
-            FormBody formBody = builder.build();
-            // 创建OkHttpClient对象
-            OkHttpClient okHttpClient = new OkHttpClient();
-            // 创建一个请求
-            if (method.equals("post")) {
-                Request request = new Request.Builder().url(url).post(formBody).build();
-                Response response = okHttpClient.newCall(request).execute();
-                String result = response.body().string();
-                return result;
-            } else {
-                Request request = new Request.Builder().url(url).get().build();
-                Response response = okHttpClient.newCall(request).execute();
-                String result = response.body().string();
-                return result;
-            }
+		    //获取map集合的所有"映射"的Set集合,这里规范每个映射的类型为Map.Entry<K, V>（于Set集合中无序存放）
+		    Set<Map.Entry<String, String>> entrySet = hashMap.entrySet();
+		    //新建List集合获取Set集合的所有元素（"映射"对象）（顺序与Set集合一样）
+		    List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(entrySet);
+		    //获取List集合的迭代器,Map.Entry<K, V>为迭代元素的类型
+		    Iterator<Map.Entry<String, String>> iter = list.iterator();
+		    FormBody.Builder builder = new FormBody.Builder();
+		    for (int i = 0; i < list.size(); i++) {
+			    builder.add(list.get(i).getKey(), list.get(i).getValue());
+		    }
+		    builder.add("sign", s1);
+		    FormBody formBody = builder.build();
+		    // 创建OkHttpClient对象
+		    OkHttpClient okHttpClient = new OkHttpClient();
+		    // 创建一个请求
+		    if (method.equals("post")) {
+			    Request request = new Request.Builder().url(url).post(formBody).build();
+			    Response response = okHttpClient.newCall(request).execute();
+			    String result = response.body().string();
+			    return result;
+		    } else {
+			    Request request = new Request.Builder().url(url).get().build();
+			    Response response = okHttpClient.newCall(request).execute();
+			    String result = response.body().string();
+			    return result;
+		    }
 
 
-        } else {
-            // 创建OkHttpClient对象
-            OkHttpClient okHttpClient = new OkHttpClient();
-            // 创建一个请求
-            if (method.equals("post")) {
-                FormBody.Builder builder = new FormBody.Builder();
-                FormBody build = builder.build();
-                Request request = new Request.Builder().url(url).post(build).build();
-                Response response = okHttpClient.newCall(request).execute();
-                String result = response.body().string();
-                return result;
-            } else {
-                Request request = new Request.Builder().url(url).get().build();
-                Response response = okHttpClient.newCall(request).execute();
-                String result = response.body().string();
-                return result;
-            }
+	    } else {
+		    // 创建OkHttpClient对象
+		    OkHttpClient okHttpClient = new OkHttpClient();
+		    // 创建一个请求
+		    if (method.equals("post")) {
+			    FormBody.Builder builder = new FormBody.Builder();
+			    FormBody build = builder.build();
+			    Request request = new Request.Builder().url(url).post(build).build();
+			    Response response = okHttpClient.newCall(request).execute();
+			    String result = response.body().string();
+			    return result;
+		    } else {
+			    Request request = new Request.Builder().url(url).get().build();
+			    Response response = okHttpClient.newCall(request).execute();
+			    String result = response.body().string();
+			    return result;
+		    }
 
-        }
+	    }
 
     }
 
@@ -304,31 +316,31 @@ public class HttpConnect {
     public static String GetMd5s(Map<String, String> stringStringHashMap) throws NoSuchAlgorithmException {
 
 
-        if (stringStringHashMap == null) {
-            return "";
-        }
-        //获取map集合的所有"映射"的Set集合,这里规范每个映射的类型为Map.Entry<K, V>（于Set集合中无序存放）
-        Set<Map.Entry<String, String>> entrySet = stringStringHashMap.entrySet();
-        //新建List集合获取Set集合的所有元素（"映射"对象）（顺序与Set集合一样）
-        List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(entrySet);
+	    if (stringStringHashMap == null) {
+		    return "";
+	    }
+	    //获取map集合的所有"映射"的Set集合,这里规范每个映射的类型为Map.Entry<K, V>（于Set集合中无序存放）
+	    Set<Map.Entry<String, String>> entrySet = stringStringHashMap.entrySet();
+	    //新建List集合获取Set集合的所有元素（"映射"对象）（顺序与Set集合一样）
+	    List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(entrySet);
 
-        Collections.sort(list, new AscKeyComparator());
+	    Collections.sort(list, new AscKeyComparator());
 
-        Iterator<Map.Entry<String, String>> iter = list.iterator();    //获取List集合的迭代器,Map.Entry<K, V>为迭代元素的类型
-//        String str = getHashMapStrting(list);
+	    Iterator<Map.Entry<String, String>> iter = list.iterator();    //获取List集合的迭代器,Map.Entry<K, V>为迭代元素的类型
+	    //        String str = getHashMapStrting(list);
 
-        String str = MD5Utils.getHashMapStrting(list);
+	    String str = MD5Utils.getHashMapStrting(list);
 
 
-        // 生成一个MD5加密计算摘要
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        // 计算md5函数
-        md.update(str.getBytes());
-        // digest()最后确定返回md5 hash值，返回值为8为字符串。因为md5 hash值是16位的hex值，实际上就是8位的字符
-        // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
-        String md5 = new BigInteger(1, md.digest()).toString(16);
-        //BigInteger会把0省略掉，需补全至32位
-        return fillMD5(md5);
+	    // 生成一个MD5加密计算摘要
+	    MessageDigest md = MessageDigest.getInstance("MD5");
+	    // 计算md5函数
+	    md.update(str.getBytes());
+	    // digest()最后确定返回md5 hash值，返回值为8为字符串。因为md5 hash值是16位的hex值，实际上就是8位的字符
+	    // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
+	    String md5 = new BigInteger(1, md.digest()).toString(16);
+	    //BigInteger会把0省略掉，需补全至32位
+	    return fillMD5(md5);
 
     }
 
@@ -339,7 +351,7 @@ public class HttpConnect {
      * @ return
      */
     public static String fillMD5(String md5) {
-        return md5.length() == 32 ? md5 : fillMD5("0" + md5);
+	    return md5.length() == 32 ? md5 : fillMD5("0" + md5);
     }
 
 

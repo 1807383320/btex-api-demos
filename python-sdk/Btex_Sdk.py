@@ -137,6 +137,10 @@ def build_sign(param, secretKey):
     data = sign + 'secret_key=' + secretKey
     return hashlib.md5(data.encode("utf8")).hexdigest()
 
+def get_dig_configs():
+    response = requests.get(BASE_URL + 'openapi1/get_dig_configs')
+    return response.json()
+
 
 if __name__ == '__main__':
     print(get_all_pairs_tickers('openapi1/pairs'))

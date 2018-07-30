@@ -82,6 +82,11 @@ var btex_sdk = {
         var path = '/openapi1/pairs';
         return call_api('GET', path);
     },
+    // to get configs for mining
+    get_dig_configs: function() {
+	var path = '/openapi1/get_dig_configs';
+	return call_api('GET', path);
+    },
     // 获取单个市场
     get_single_pair: function(pair) {
         var path = '/openapi1/pair';

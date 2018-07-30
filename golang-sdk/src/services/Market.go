@@ -75,9 +75,18 @@ func Trades(pair string ,depth int) models.TradesReturn{
 	return p
 }
 
+func GetDigConfigs() models.DigConfigInfo{
+	strUrl := config.BASE_URL + "/get_dig_configs"
+	param := make(map[string]string)
+	res := untils.HttpGetRequest(strUrl, param)
+	digConfigInfo := models.DigConfigInfo{}
+	json.Unmarshal([]byte(res),&digConfigInfo)
+	return digConfigInfo
+}
+
 /**
 获取我的信息
- */
+*/
 func GetMyInfo() models.InfoRes  {
 	strUrl := config.TRADE_URL
 	method := "getinfo"
@@ -117,7 +126,7 @@ func BuyCoin(pair string, price float64, num float64) models.OrderRes{
 
 /*
 sell coin
- */
+*/
 func SellCoin(pair string, price float64, num float64) models.OrderRes{
 	strUrl := config.TRADE_URL
 	param := make(map[string]string)
@@ -135,7 +144,7 @@ func SellCoin(pair string, price float64, num float64) models.OrderRes{
 
 /*
 cancel order
- */
+*/
 
 func CancelOrder(orderId int) models.OrderRes {
 	strUrl := config.TRADE_URL
@@ -152,7 +161,7 @@ func CancelOrder(orderId int) models.OrderRes {
 
 /*
 my order
- */
+*/
 func MyOrder(pair string, amount int) models.MyOrderRes{
 	strUrl := config.TRADE_URL
 	param := make(map[string]string)
@@ -169,7 +178,7 @@ func MyOrder(pair string, amount int) models.MyOrderRes{
 
 /*
 my trade
- */
+*/
 func MyTrade(pair string, page int, pageSize int) models.MyTradeRes{
 	strUrl := config.TRADE_URL
 	param := make(map[string]string)
@@ -187,7 +196,7 @@ func MyTrade(pair string, page int, pageSize int) models.MyTradeRes{
 
 /*
 获取K线数据
- */
+*/
 func GetKLine(pair string, k_type string, amount int){
 	strUrl := config.BASE_URL + "/k_data"
 	param := make(map[string]string)

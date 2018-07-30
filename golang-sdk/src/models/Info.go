@@ -39,3 +39,14 @@ type InfoRes struct {
 	} `json:"data"`
 	Info string `json:"info"`
 }
+
+type DigConfigInfo struct {
+	Code int `json:"code"`
+	Data struct {
+		CurrentDigPercent string `json:"current_dig_percent"`
+		CurrentDigTotal   int    `json:"current_dig_total"`
+		ExpectDigTotal    int    `json:"expect_dig_total"`
+		InviteDigReward   string `json:"invite_dig_reward"`
+	} `json:"data"`
+	Info string `json:"info"`
+}

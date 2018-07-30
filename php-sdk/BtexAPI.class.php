@@ -153,6 +153,13 @@ class BtexAPI{
                 $tResult = $this->httpRequest(AUTH_API_URL, $tParams);
                 return json_decode($tResult,1);
         }
+
+
+	function get_dig_configs(){
+		$tResult = $this->httpRequest(PUB_API_URL."get_dig_configs","");
+		return json_decode($tResult,1);
+	}
+
         /**
         * get my trade history, if the pair is empty, will return all trade history
         * @params 
@@ -175,31 +182,6 @@ class BtexAPI{
                 return json_decode($tResult,1);
         }
         
-        //get my deposit address 
-        function deposit_address($type){
-                if(!$type) return false;
-                $tParams = array();
-                $tParams['method'] = 'deposit_address';
-                $tParams['access_key'] = $this->access_key;
-                $tParams['created'] = time();
-                $tParams['type'] = $type;
-            
-                $tParams['sign'] = $this->createSign($tParams);
-                $tResult = $this->httpRequest(AUTH_API_URL, $tParams);
-                return json_decode($tResult,1);
-        }
-
-        //get my history deposits 
-        function mydeposits(){
-                $tParams = array();
-                $tParams['method'] = 'mydeposits';
-                $tParams['access_key'] = $this->access_key;
-                $tParams['created'] = time();
-            
-                $tParams['sign'] = $this->createSign($tParams);
-                $tResult = $this->httpRequest(AUTH_API_URL, $tParams);
-                return json_decode($tResult,1);
-        }
 
         function httpRequest($pUrl, $pData){
                 $tCh = curl_init();
