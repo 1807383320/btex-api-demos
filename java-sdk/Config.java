@@ -24,4 +24,6 @@ public class Config {
     static String GetTradeHistory = "https://api.btex.com/openapi1/trades?";
     //我的成交历史
     static String MyTradeHistory = "https://api.btex.com/openapi1/auth_api";
+    //我的挖矿比例
+    static String InviteDigReward = "https://api.btex.com/openapi1/get_dig_configs";
 }
