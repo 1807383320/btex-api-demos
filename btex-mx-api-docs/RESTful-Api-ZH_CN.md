@@ -53,7 +53,7 @@
 
 > 获取某个合约交易最新行情
  
-#### GET /mx_data/tickers #####
+####GET /mx_data/tickers #####
 
 **请求参数：** 
 
