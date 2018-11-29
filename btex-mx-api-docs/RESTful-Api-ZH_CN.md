@@ -1,7 +1,7 @@
  
 > 获取合约交易市场列表
 
-####GET /mx_data/contracts ####
+#### GET /mx_data/contracts ####
 
 **请求参数：** 
 
@@ -53,7 +53,7 @@
 
 > 获取某个合约交易最新行情
  
-####GET /mx_data/tickers #####
+#### GET /mx_data/tickers #####
 
 **请求参数：** 
 
@@ -93,7 +93,7 @@
 
 > 获取某个合约交易的市场深度
 
-####GET /mx_data/orderbook ####
+#### GET /mx_data/orderbook ####
 
 **请求参数：** 
 
@@ -154,7 +154,7 @@
 
 > 获取某个合约交易历史
 
-####GET /mx_data/trades ####
+#### GET /mx_data/trades ####
 
 **请求参数：** 
 
@@ -192,7 +192,7 @@
 
 > 获取某个合约交易k线
 
-####GET /mx_data/k_data ####
+#### GET /mx_data/k_data ####
 
 **请求参数：** 
 
@@ -247,7 +247,7 @@
 
 > 获取合约账户信息
  
-####POST /mx_openapi1/account_info ####
+#### POST /mx_openapi1/account_info ####
 
 **请求参数：** 
 
@@ -301,7 +301,7 @@
 
 > 下单(做多/做空)
 
-####POST /mx_openapi1/place_order####
+#### POST /mx_openapi1/place_order####
 
 **请求参数：** 
 
@@ -339,7 +339,7 @@
 
 > 取消委托
 
-####POST /mx_openapi1/cancel_order ####
+#### POST /mx_openapi1/cancel_order ####
 
 **请求参数：** 
 
@@ -369,7 +369,7 @@
 
 > 获取我的活动委托
 
-####POST /mx_openapi1/active_orders ####
+#### POST /mx_openapi1/active_orders ####
 
 **请求参数：** 
 
@@ -416,7 +416,7 @@
 
 > 获取当前未平仓位
 
-####POST /mx_openapi1/active_positions ####
+#### POST /mx_openapi1/active_positions ####
 
 **请求参数：** 
 
@@ -460,8 +460,9 @@
 }
 ```
 
+> 获取我的委托历史
 
-####POST /mx_openapi1/myorders 获取我的委托历史####
+#### POST /mx_openapi1/myorders ####
 
 **请求参数：** 
 
@@ -509,8 +510,9 @@
 }
 ```
 
+> 获取我的交易历史
 
-####POST /mx_openapi1/mytrades 获取我的交易历史####
+#### POST /mx_openapi1/mytrades ####
 
 **请求参数：** 
 
@@ -556,7 +558,7 @@
 
 > 获取我的已平仓位
 
-####POST /mx_openapi1/mypositions ####
+#### POST /mx_openapi1/mypositions ####
 
 **请求参数：** 
 
@@ -599,7 +601,7 @@
 
 > 获取某个委托的成交明细
 
-####POST /mx_openapi1/order_match_results ####
+#### POST /mx_openapi1/order_match_results ####
 
 **请求参数：** 
 
