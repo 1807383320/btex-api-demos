@@ -1,6 +1,6 @@
-# BTEX 期货API #
+# BTEX 合约API #
 
-BTEX期货交易，提供了强大的全套RESTful API支持，后续将继续开发出包括但不限于`websocket`等形式的API支持。
+BTEX合约交易，提供了强大的全套RESTful API支持，后续将继续开发出包括但不限于`websocket`等形式的API支持。
 
 用户在用户中心申请API后，会得到一个`secret_key`和一个`access_key`，用于API接口调用中的身份识别和数据校验。 
 
