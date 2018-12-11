@@ -254,6 +254,7 @@
 |参数名|必选|类型|说明|默认值|取值范围|
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey，用户申请| | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | ||
 
  **响应数据** 
@@ -315,6 +316,7 @@
 |direction |true  |int| 委托方向 | |1:	做多；-1: 做空|
 |type |true  |string | 委托类型 | |  limit: 限价单; market: 市价单 |
 |is_cross |true  |int |是否全仓 | | 1: 全仓，-1：非全仓    |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -347,6 +349,7 @@
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey，用户申请| ||
 |order_id |是  |int |  委托单id | | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -377,6 +380,7 @@
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey，用户申请| ||
 |contract_id|true  |int |合约ID  | | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -424,6 +428,7 @@
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey，用户申请| ||
 |contract_id|false  |int |合约ID  | | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -472,6 +477,7 @@
 |contract_id|true  |int |合约ID  | | |
 |page|false  |int |分页，页数  | 1 | |
 |page_size|false  |int |分页，每页数量  |20 | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -522,6 +528,7 @@
 |contract_id|true  |int |合约ID  | | |
 |page|false  |int |分页，页数  | 1 | |
 |page_size|false  |int |分页，每页数量  |20 | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -568,6 +575,7 @@
 |contract_id|true  |int |合约ID  | | |
 |page|false  |int |分页，页数  | 1 | |
 |page_size|false  |int |分页，每页数量  |20 | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
@@ -609,6 +617,7 @@
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey，用户申请| ||
 |order_id|true  |int |委托单ID  | | |
+|ts | true |  int | 当前时间戳 | | |
 |sign| true |  string |  签名，详见签名信息| | | |
 
  **响应数据** 
