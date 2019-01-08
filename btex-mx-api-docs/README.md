@@ -32,7 +32,7 @@ BTEX 正式网路 https://api.btex.com/
 
 详见接口列表
 
-** MX市场公开数据接口前缀为 /mx_data/ **
+**MX市场公开数据接口前缀为 /mx_data/**
 
 |地址|含义|其他说明|
 |:----    |:--- |-----   |
@@ -44,7 +44,7 @@ BTEX 正式网路 https://api.btex.com/
 
 ## 个人账户、交易相关接口
 
-** 个人账户、交易相关的API前缀为 /mx_openapi1/   1表示当前是第一版接口 **
+**个人账户、交易相关的API前缀为 /mx_openapi1/   1表示当前是第一版接口**
 
 |地址|含义|其他说明|
 |:----    |:--- |-----   |
@@ -57,5 +57,5 @@ BTEX 正式网路 https://api.btex.com/
 |/mx_openapi1/myorders| 获取我的委托历史 | |
 |/mx_openapi1/mytrades| 获取我的成交历史| |
 |/mx_openapi1/mypositions| 获取我的仓位历史| |
-|/mx_openapi1/order_match_results| 某个委托的撮合成交历史|  **** 这个很重要 ****|
+|/mx_openapi1/order_match_results| 某个委托的撮合成交历史|  ****这个很重要****|
 
