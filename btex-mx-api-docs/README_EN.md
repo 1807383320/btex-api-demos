@@ -14,7 +14,7 @@ BTEX Website https://api.btex.com https://api.btex.me
 
 Important Note: Do not reveal your 'access_key' and 'secret_key' to anyone. They are as important as your password.
 
-BTEX use HMAC Signature. [Signing API Requests](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/sign-ZH_CN.md)。
+BTEX use HMAC Signature. [Signing API Requests](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/sign_EN.md)。
 
 ## SDK
 DEMO: Python, PHP, Java, Golang, NodeJs SDK . [SDK](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/sdk/).
@@ -45,6 +45,9 @@ kline, ticker, orderbook, contracts API.
 |/mx_data/k_data     |get contract k-line |    |
 |/mx_data/tickers    |get trade tickers |    |
 
+[Detail](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)。
+[中文详情](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)。
+
 ## Contract Account API
 
 **Prefixed by /mx_openapi1/**
@@ -61,4 +64,7 @@ kline, ticker, orderbook, contracts API.
 |/mx_openapi1/mytrades| get my history trades| |
 |/mx_openapi1/mypositions| get all my closed positions| |
 |/mx_openapi1/order_match_results| get match results for a given order_id|  ****important****|
+
+[Detail](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)。
+[中文详情](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)。
 
