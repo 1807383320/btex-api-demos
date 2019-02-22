@@ -45,8 +45,9 @@ kline, ticker, orderbook, contracts API.
 |/mx_data/k_data     |get contract k-line |    |
 |/mx_data/tickers    |get trade tickers |    |
 
-[Detail](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)。
-[中文详情](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)。
+[API Detail(EN)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)
+
+[API 详情(ZH)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)
 
 ## Contract Account API
 
@@ -65,6 +66,7 @@ kline, ticker, orderbook, contracts API.
 |/mx_openapi1/mypositions| get all my closed positions| |
 |/mx_openapi1/order_match_results| get match results for a given order_id|  ****important****|
 
-[Detail](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)。
-[中文详情](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)。
+[API Detail(EN)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md)
+
+[API 详情(ZH)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)
 
