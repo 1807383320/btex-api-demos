@@ -64,4 +64,4 @@ hash_hmac('sha256', $tPreStr, SECRET_KEY, TRUE);
 5，Add the `sign` as a parameter to the POST parameters。
 ```
 access_key=abcdefgh&contract_id=123456&secret_key=abcdefgh&ts=1544400608&sign=signxxxxxxxxxx
-	 ```
+```

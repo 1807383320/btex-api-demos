@@ -1,32 +1,31 @@
-
 # Market Data API
 
 > Get Contracts Data (and single contract data)
 
 #### GET /mx_data/contracts ####
 
-	** Request: ** 
+**Request:** 
 
-	| Param |required |data type|description|default|value range|
-	|:----    |:---|:----- |-----   | -----   | ----- |  
-	|contract_id |false |int |contract_id   | 0 | 1,2,3,4,101,102...10000 | |  
+| Param |required |data type|description|default|value range|
+|:----    |:---|:----- |-----   | -----   | ----- |  
+|contract_id |false |int |contract_id   | 0 | 1,2,3,4,101,102...10000 | |  
 
-	**Response:** 
+**Response:** 
 
-	|Param|data type|description|value range|
-	|:----    |:---|:----- |-----  | 
-	|code |int | response code  |   |
-	|info |string | error informations  |   |
-	|data |array| response data  |   | |
+|Param|data type|description|value range|
+|:----    |:---|:----- |-----  | 
+|code |int | response code  |   |
+|info |string | error informations  |   |
+|data |array| response data  |   | |
 
-	**Response:description**
+**Response:description**
 
-	``` 
+``` 
 {
 	"code": 1,
 		"info": "ok",
 		"data": [{
-			"contract_id": "1",					    #contract id
+				"contract_id": "1",					    #contract id
 				"symbol": "BTC_USD",				    #contract symbol 
 				"settle_anchor": "BTC",				    #Settle Anchor
 				"quote_anchor": "USD",				    #Qquote anchor
@@ -78,8 +77,8 @@
 	"code": 1,
 		"info": "ok",
 		"data": [{
-			"contract_id": "1",
-			"min": "3475.09000000",				#24 Hour High
+				"contract_id": "1",
+				"min": "3475.09000000",				#24 Hour High
 				"max": "4270.00000000",				#24 Hour Low
 				"latest": "3902.07000000",			#Lates Price
 				"change_24h": "0.0684",				#24 Hour range
@@ -123,7 +122,7 @@
 		"data": {
 			"bids": [{
 				"price": 3911.02,		#Price
-					"amount": 7182			#Amount
+				"amount": 7182			#Amount
 			}, {
 				"price": 3910.8,
 				"amount": 8022
@@ -182,7 +181,7 @@
 		"info": "ok",
 		"data": {
 			"lists": [{
-				"trade_id": "1234567",		#trade id
+					"trade_id": "1234567",		#trade id
 					"time": 1543224980,			#trade time
 					"price": "3898.73000000",	#price
 					"num": "4116",				#amount
@@ -222,7 +221,7 @@
 		"data": {
 			"lists": [
 				[
-					"1543219200000",
+			"1543219200000",
 			"3976.81000000",
 			"3976.86000000",
 			"3876.78000000",
@@ -231,7 +230,7 @@
 			"4251467748.36"
 				],
 				[
-					"1543222800000",
+				"1543222800000",
 				"3903.01000000",
 				"3940.18000000",
 				"3862.47000000",
@@ -276,12 +275,12 @@
 	"code": 1,
 		"info": "ok",
 		"data": {
-			"time": 1543226696,							#timestamp
+				"time": 1543226696,							#timestamp
 				"estimate_BTC": 0.50110094,					#estimate BTC
 				"estimate_USD": 1991.3337402628,			#estimate USD
 				"estimate_CNY": 13740.202807828,			#estimate CNY
 				"balances": [{
-					"coin": "BTC",							#coin type
+						"coin": "BTC",							#coin type
 						"balance": "0.33201858",				#balance
 						"position_margin": 0.16908236,			#position margin
 						"order_margin": 0,						#order margin
@@ -307,32 +306,32 @@
 
 #### POST /mx_openapi1/place_order ####
 
-	**Request:** 
+**Request:** 
 
-	|Param|required|data type|description|default|value range|
-	|:----    |:---|:----- |-----   | -----   | ----- |  
-	|access_key| true |  string |  AccessKey| ||
-	|contract_id|true  |int |Contract ID | | |
-	|price |true  |float| Price    | | |
-	|amount |true  |int| Amount   | | |
-	|leverage |true  |float| Leverage  | | |
-	|direction |true  |int| Direction | |1:	Long；-1: Short|
-	|type |true  |string | Order Type | |  limit: Limit Order; market: Market Order |
-	|is_cross |true  |int |Is Cross | | 1: Cross，-1：Not Cross    |
-	|ts | true |  int | timestamp | | |
-	|sign| true |  string |  signature| | | |
+|Param|required|data type|description|default|value range|
+|:----    |:---|:----- |-----   | -----   | ----- |  
+|access_key| true |  string |  AccessKey| ||
+|contract_id|true  |int |Contract ID | | |
+|price |true  |float| Price    | | |
+|amount |true  |int| Amount   | | |
+|leverage |true  |float| Leverage  | | |
+|direction |true  |int| Direction | |1:	Long；-1: Short|
+|type |true  |string | Order Type | |  limit: Limit Order; market: Market Order |
+|is_cross |true  |int |Is Cross | | 1: Cross，-1：Not Cross    |
+|ts | true |  int | timestamp | | |
+|sign| true |  string |  signature| | | |
 
-	**Response:** 
+**Response:** 
 
-	|Param|data type|description|value range|
-	|:----    |:---|:----- |-----  | 
-	|code |int | response code   |   |
-	|info |string | error informations  |   |
-	|data |object|response data  |   | |
+|Param|data type|description|value range|
+|:----    |:---|:----- |-----  | 
+|code |int | response code   |   |
+|info |string | error informations  |   |
+|data |object|response data  |   | |
 
-	**response datadescription**
+**response datadescription**
 
-	``` 
+``` 
 {
 	"code": 1,
 		"info": "ok",
@@ -351,7 +350,7 @@
 |Param|required|data type|description|default|value range|
 |:----    |:---|:----- |-----   | -----   | ----- |  
 |access_key| true |  string |  AccessKey| ||
-|order_id |是  |int |  order id | | |
+|order_id |Yes  |int |  order id | | |
 |ts | true |  int | timestamp | | |
 |sign| true |  string | signature| | | |
 
@@ -403,7 +402,7 @@
 		"info": "ok",
 		"data": {
 			"order_lists": [{
-				"order_id": "2088691",					#Order ID
+					"order_id": "2088691",					#Order ID
 					"contract_id": "1",						#Contract ID
 					"amount": "1000",						#Order Amount
 					"price": "3918.80000000",				#Order Price
@@ -451,7 +450,7 @@
 		"info": "ok",
 		"data": {
 			"position_lists": [{
-				"position_id": "32",						 #Position ID
+					"position_id": "32",						 #Position ID
 					"contract_id": "1",							 #Contract ID
 					"direction": "-1",							 #Direction, 1: long -1,short
 					"amount": "8000",							 #Contract Amount
@@ -490,7 +489,7 @@
 |code |int | response code   |   |
 |info |string | error informations  |   |
 |data |object|response data  |   |
-|orders_his |array|委托历史列表  |   | |
+|orders_his |array|history orders list  |   | |
 
 
 **Response:description**
@@ -501,7 +500,7 @@
 		"info": "ok",
 		"data": {
 			"orders_his": [{
-				"order_id": "2088691",					#Order ID
+					"order_id": "2088691",					#Order ID
 					"contract_id": "1",						#Contract ID
 					"amount": "1000",						#Order Amount
 					"price": "3918.80000000",				#Order Price
@@ -551,7 +550,7 @@
 		"info": "ok",
 		"data": {
 			"trades_his": [{
-				"trade_id":"1234567",				  #Trade ID
+					"trade_id":"1234567",				  #Trade ID
 					"contract_id": "1",					  #Contract ID
 					"symbol": "BTC_USD",				  #Contract Symbol
 					"price": "3918.80000000",			  #Trade Price
@@ -599,7 +598,7 @@
 		"info": "ok",
 		"data": {
 			"position_his": [{
-				"position_id": "32",			#Position ID
+					"position_id": "32",			#Position ID
 					"contract_id": "1",				#Contract ID
 					"rlz_pnl": "-0.00066059",		#Realized PNL
 					"end_time": 1543058024,			#position end time
@@ -638,7 +637,7 @@
 	"code": 1,
 		"info": "ok",
 		"data": [{
-			"trade_id":"1234567",				 #trade id
+				"trade_id":"1234567",				 #trade id
 				"contract_id": "1",					 #contract ID
 				"symbol": "BTC_USD",				 #contract symbol
 				"price": "4269.20000000",			 #trade price
@@ -652,7 +651,3 @@
 		}]
 }
 ```
-
-
-
-
