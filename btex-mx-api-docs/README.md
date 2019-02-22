@@ -30,7 +30,7 @@ BTEX 正式网路 https://api.btex.com/
 
 ## 市场公开数据接口
 
-详见接口列表
+详见接口列表. [API Detail(EN)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md). [API 详情(ZH)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)
 
 **MX市场公开数据接口前缀为 /mx_data/**
 
@@ -43,6 +43,8 @@ BTEX 正式网路 https://api.btex.com/
 |/mx_data/tickers    |只获取交易数据(只获取ticker，不获取其他信息)  |    |
 
 ## 个人账户、交易相关接口
+
+详见接口列表. [API Detail(EN)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-EN.md). [API 详情(ZH)](https://github.com/btex-dev/btex-api-demos/blob/master/btex-mx-api-docs/RESTful-Api-ZH_CN.md)
 
 **个人账户、交易相关的API前缀为 /mx_openapi1/   1表示当前是第一版接口**
 
