@@ -197,7 +197,20 @@ class BtexMxAPI{
                 $tResult = $this->httpRequest(TRADE_API_URL.'/order_match_results', $tParams);
                 return json_decode($tResult,1);
         }
-
+	
+	//get the order status
+	function get_order_batch($order_id){
+		if(strlen(trim($order_id)) < 1){
+		    return false;	
+		}
+		$tParams = array();
+		$tParams['access_key'] = $this->access_key;
+		$tParams['order_id'] = $order_id;
+		$tParams['ts'] = time();
+		$tParams['sign'] = $this->createSign($tParams);
+		$tResult = $this->httpRequest(TRADE_API_URL.'/get_order_batch', $tParams);
+		return json_decode($tResult,1);
+	}
 
         function httpRequest($pUrl, $pData){
                 $tCh = curl_init();
@@ -217,13 +230,13 @@ class BtexMxAPI{
         }
         
         //sign the data
-		function createSign($pParams = array()) {
-			$pParams['secret_key'] = $this->secret_key;
-            ksort($pParams);
-            $tPreSign = http_build_query($pParams);
-			$signature = hash_hmac('sha256', $tPreSign, $this->secret_key, true);
-			return base64_encode($signature);
-		}
+	function createSign($pParams = array()) {
+		$pParams['secret_key'] = $this->secret_key;
+            	ksort($pParams);
+            	$tPreSign = http_build_query($pParams);
+		$signature = hash_hmac('sha256', $tPreSign, $this->secret_key, true);
+		return base64_encode($signature);
+	}
 }
 /**
 * Test Demo
@@ -288,6 +301,11 @@ class BtexMxAPI{
     //get my order match results
     //$order_id = '2237140';
     //$res = $sdk->order_match_results($order_id);
+    //var_dump($res);
+
+    //get orders status
+    //$order_id = '12345,12456,12789';
+    //$res = $sdk->get_order_batch($order_id);
     //var_dump($res);
    
 ?>
