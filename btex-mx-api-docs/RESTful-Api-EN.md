@@ -25,29 +25,30 @@
 	"code": 1,
 	"info": "ok",
 	"data": [{
-			"contract_id": "1",					    #contract id
-			"symbol": "BTC_USD",				    #contract symbol 
+			"contract_id": "1",				    #contract id
+			"symbol": "BTC",				    #contract symbol 
 			"settle_anchor": "BTC",				    #Settle Anchor
 			"quote_anchor": "USD",				    #Qquote anchor
 			"contract_anchor": "USD",			    #single contract anchor
-			"contract_value": "1.00000000",         #single contract value
+			"contract_value": "1.00000000",         	    #single contract value
+			"pair": "BTC_USD",				    #contract pair
 			"type": "1",				            #contract type，1:Perpetual contract, 2: futures
-			"expiry": "0000-00-00 00:00:00",        #delivery time
-			"max_leverage": "100",	                #max leverage
-			"maintance_margin": "0.00500000",       #maintance margin
-			"maker_fee": "-0.00050000",				#maker fee
-			"taker_fee": "0.00150000",				#taker fee
-			"settle_fee": "0.00000000",				#delivery fee
-			"price_dec": "2",						#price decimal
-			"anchor_dec": "8",						#anchor decimal
-			"status": "1",							#contract，1:in trading ,0:suspend ,-1: permanent stop trade
-			"isreverse": "1",						#1:reverse contract，-1:Forward contract
-			"allow_cross": "1",						#allow cross，1: allow，-1: not allow
+			"expiry": "0000-00-00 00:00:00",                    #delivery time
+			"max_leverage": "100",	                            #max leverage
+			"maintance_margin": "0.00500000",                   #maintance margin
+			"maker_fee": "-0.00050000",			    #maker fee
+			"taker_fee": "0.00150000",			    #taker fee
+			"settle_fee": "0.00000000",			    #delivery fee
+			"price_dec": "2",				    #price decimal
+			"anchor_dec": "8",				    #anchor decimal
+			"status": "1",				#contract，1:in trading ,0:suspend ,-1:permanent stop trade
+			"isreverse": "1",			#1:reverse contract，-1:Forward contract
+			"allow_cross": "1",			#allow cross，1: allow，-1: not allow
 			"allow_leverages": "1,5,10,25,50,100",	#leverages
-			"max_order_num": "20",					#max active orders in the market
-			"max_amount": 50000,					#Max conts. in one order
-			"min_amount": 10,					    #Min conts. in one order
-			"max_position_amount": 50000,			#Max positions
+			"max_order_num": "20",				    #max active orders in the market
+			"max_amount": 50000,				    #Max conts. in one order
+			"min_amount": 10,				    #Min conts. in one order
+			"max_position_amount": 50000,			    #Max positions
 	}]
 }
 ```
@@ -77,17 +78,18 @@
 	"code": 1,
 	"info": "ok",
 	"data": [{
-			"contract_id": "1",
+			"contract_id": "1",				#contract id
+			"pair": "BTC_USD",				#contract pair
 			"min": "3475.09000000",				#24 Hour High
 			"max": "4270.00000000",				#24 Hour Low
 			"latest": "3902.07000000",			#Lates Price
 			"change_24h": "0.0684",				#24 Hour range
 			"amount": "27259252",				#24 Hour amount
 			"volumn": "7067.4340786",			#24 Hour Volumn
-			"open_interest": "11111",			#Open Interest
-			"index_price": "3890.3647111111",	#Index Price
-			"fair_price": "3890.389890416",		#Fair Price
-			"next_funding_rate": "1.25E-5",		#Predict Next Funding Rate
+			"open_interest": "12345",			#Open Interest
+			"index_price": "3890.3647111111",		#Index Price
+			"fair_price": "3890.389890416",			#Fair Price
+			"next_funding_rate": "0.00125000",		#Predict Next Funding Rate
 	}]
 }
 ```
@@ -181,9 +183,9 @@
 	"info": "ok",
 	"data": {
 		"lists": [{
-			"trade_id": "1234567",		#trade id
+			"trade_id": "1234567",			#trade id
 			"time": 1543224980,			#trade time
-			"price": "3898.73000000",	#price
+			"price": "3898.73000000",		#price
 			"num": "4116",				#amount
 			"type": "sell"				#buy/sell
 		}]
@@ -221,13 +223,13 @@
 	"data": {
 		"lists": [
 			[
-			"1543219200000",
-			"3976.81000000",
-			"3976.86000000",
-			"3876.78000000",
-			"3903.01000000",
-			"1078399",
-			"4251467748.36"
+			"1543219200000",			#timestamp
+			"3976.81000000",			#open
+			"3976.86000000",			#high
+			"3876.78000000",			#low
+			"3903.01000000",			#close
+			"1078399",				#amount
+			"4251467748.36"				#volumn
 			],
 			[
 			"1543222800000",
@@ -274,28 +276,28 @@
 	"code": 1,
 	"info": "ok",
 	"data": {
-			"time": 1543226696,							#timestamp
-			"estimate_BTC": 0.50110094,					#estimate BTC
-			"estimate_USD": 1991.3337402628,			#estimate USD
-			"estimate_CNY": 13740.202807828,			#estimate CNY
+			"time": 1543226696,						#timestamp
+			"estimate_BTC": "0.50110094",					#estimate BTC
+			"estimate_USD": "1991.3337402628",				#estimate USD
+			"estimate_CNY": "13740.202807828",				#estimate CNY
 			"balances": [{
-				"coin": "BTC",							#coin type
+				"coin": "BTC",						#coin type
 				"balance": "0.33201858",				#balance
-				"position_margin": 0.16908236,			#position margin
-				"order_margin": 0,						#order margin
-				"total": 0.50110094,					#total balance
-				"estimate_BTC": 0.50110094,				#estimate BTC
-				"estimate_USD": 1991.3337402628,		#estimate USD
-				"estimate_CNY": 13740.202807828			#estimate CNY
+				"position_margin": "0.16908236",			#position margin
+				"order_margin": "0.00000000",				#order margin
+				"total": "0.50110094",					#total balance
+				"estimate_BTC": "0.50110094",				#estimate BTC
+				"estimate_USD": "1991.3337402628",			#estimate USD
+				"estimate_CNY": "13740.202807828"			#estimate CNY
 			}, {
 				"coin": "ETH",
 				"balance": "0.00000000",
-				"position_margin": 0,
-				"order_margin": 0,
-				"total": 0,
-				"estimate_BTC": 0,
-				"estimate_USD": 0,
-				"estimate_CNY": 0
+				"position_margin": "0.00000000",
+				"order_margin": "0.00000000",
+				"total": "0.00000000",
+				"estimate_BTC": "0.00000000",
+				"estimate_USD": "0.00000000",
+				"estimate_CNY": "0.00000000"
 			}]
 	}
 }
@@ -402,18 +404,17 @@
 	"data": {
 		"order_lists": [{
 			"order_id": "2088691",					#Order ID
-			"contract_id": "1",						#Contract ID
-			"amount": "1000",						#Order Amount
+			"contract_id": "1",					#Contract ID
+			"amount": "1000",					#Order Amount
 			"price": "3918.80000000",				#Order Price
-			"type": "limit",						#Order Type: limit, market
-			"leverage": "10",						#Leverage
-			"direction": "-1",						#Direction 1: long -1: short
-			"available": "1000",					#Order available
-			"ctime": "1543228468",					#Order Time
+			"type": "limit",					#Order Type: limit, market
+			"leverage": "10",					#Leverage
+			"direction": "-1",					#Direction 1: long -1: short
 			"order_status": "0",					#Order Status
-			"liquidation_price": "0.00000000",		#Liquidation Price
-			"is_cross": "-1",						#IS Cross，1: Cross,-1: Isolated
-			"symbol": "BTC_USD"						#Contract Symbol
+			"is_cross": "-1",					#IS Cross，1: Cross,-1: Isolated
+			"available": "1000",					#Order available
+			"time": 1543228468,					#Order Time
+			"pair": "BTC_USD"					#Contract pair
 		}]
 	}
 }
@@ -449,18 +450,18 @@
 	"info": "ok",
 	"data": {
 		"position_lists": [{
-			"position_id": "32",						 #Position ID
-			"contract_id": "1",							 #Contract ID
-			"direction": "-1",							 #Direction, 1: long -1,short
-			"amount": "8000",							 #Contract Amount
+			"position_id": "32",				 #Position ID
+			"contract_id": "1",				 #Contract ID
+			"price": "4222.40221239",			 #Open price
+			"direction": "-1",				 #Direction, 1: long -1,short
+			"amount": "8000",				 #Contract Amount
 			"liquidation_price": "4665.63780374",		 #Liquidation Price
-			"rlz_pnl": "0.00188912",					 #Realised PNL
-			"unrlz_pnl": "0.00000000",					 #Unrealised PNL
-			"margin": "0.19540420",						 #Positoin Margin
-			"leverage": "10.00000000",					 #Leverage
-			"price": "4222.40221239",					 #Open price
-			"is_cross": "-1",							 #Is Cross 1: cross 2. isolate
-			"symbol": "BTC_USD",						 #contract symbol
+			"rlz_pnl": "0.00188912",			 #Realised PNL
+			"unrlz_pnl": "0.00000000",			 #Unrealised PNL
+			"margin": "0.19540420",				 #Positoin Margin
+			"leverage": "10.00000000",			 #Leverage
+			"is_cross": "-1",				 #Is Cross 1: cross 2. isolate
+			"pair": "BTC_USD",				 #contract pair
 		}]
 	}
 }
@@ -500,18 +501,17 @@
 	"data": {
 		"orders_his": [{
 			"order_id": "2088691",					#Order ID
-			"contract_id": "1",						#Contract ID
-			"amount": "1000",						#Order Amount
+			"contract_id": "1",					#Contract ID
+			"amount": "1000",					#Order Amount
 			"price": "3918.80000000",				#Order Price
-			"type": "limit",						#Order Type
-			"leverage": "10",						#Leverage
-			"direction": "-1",						#Direction 1:long -1:short
-			"available": "1000",					#available
-			"ctime": "1543228468",					#Order Time
+			"type": "limit",					#Order Type
+			"leverage": "10",					#Leverage
+			"direction": "-1",					#Direction 1:long -1:short
 			"order_status": "0",					#Order Status
-			"liquidation_price": "0.00000000",		#Liquidation Price
-			"is_cross": "-1",						#Is Cross，1:cross,-1:isolate
-			"symbol": "BTC_USD"						#contract symbol
+			"is_cross": "-1",					#Is Cross，1:cross,-1:isolate
+			"available": "1000",					#available
+			"time": 1543228468,					#Order Time
+			"pair": "BTC_USD"					#contract pair
 		}]
 	}
 }
@@ -550,15 +550,16 @@
 	"data": {
 		"trades_his": [{
 			"trade_id":"1234567",				  #Trade ID
-			"contract_id": "1",					  #Contract ID
-			"symbol": "BTC_USD",				  #Contract Symbol
+			"contract_id": "1",				  #Contract ID
+			"pair": "BTC_USD",				  #Contract pair
 			"price": "3918.80000000",			  #Trade Price
-			"num": "1000",						  #Trade Num
-			"ctime": 1543228746,				  #Trade Time
+			"num": "1000",					  #Trade Num
 			"order_id": "2088691",				  #Order ID
-			"trade_info": "sell",				  #Trade info buy/sell
-			"leverage": "10",					  #Leverage
-			"is_cross": "-1",					  #IS cross，1:cross,-1:isolate
+			"type": "sell",				  	  #Trade type buy/sell
+			"trade_fee": "0.00013149",			  #Trade fee
+			"leverage": "10",			          #Leverage
+			"is_cross": "-1",				  #IS cross，1:cross,-1:isolate
+			"time": 1543228746,				  #Trade Time
 		}]
 	}
 }
@@ -598,11 +599,11 @@
 	"data": {
 		"position_his": [{
 			"position_id": "32",			#Position ID
-			"contract_id": "1",				#Contract ID
+			"contract_id": "1",			#Contract ID
 			"rlz_pnl": "-0.00066059",		#Realized PNL
 			"end_time": 1543058024,			#position end time
 			"start_time": 1543056348,		#position start time
-			"symbol": "BTC_USD"				#Contract Symbol
+			"pair": "BTC_USD"			#Contract pair
 		}]
 	}
 }
@@ -637,16 +638,16 @@
 	"info": "ok",
 	"data": [{
 		"trade_id":"1234567",				 #trade id
-		"contract_id": "1",					 #contract ID
-		"symbol": "BTC_USD",				 #contract symbol
+		"contract_id": "1",				 #contract ID
+		"pair": "BTC_USD",				 #contract pair
 		"price": "4269.20000000",			 #trade price
-		"trade_num": "1400",	             #trade amount	
-		"time": 1543058750,				     #trade time
-		"order_id": "2044264",	             #Order Time
-		"order_price": "4269.20000000",      #Order Price
-		"type": "sell",					     #trade Type
-		"leverage": "5",	                 #Leverage
-		"is_cross": "-1"					 #Is cross，1: cross ,-1:ioslate
+		"trade_num": "1400",	             		 #trade amount	
+		"time": 1543058750,				 #trade time
+		"order_id": "2044264",	             		 #Order Time
+		"order_price": "4269.20000000",      		 #Order Price
+		"type": "sell",					 #trade Type
+		"leverage": "5",	                 	 #Leverage
+		"is_cross": "-1"				 #Is cross，1: cross ,-1:ioslate
 	}]
 }
 ```
