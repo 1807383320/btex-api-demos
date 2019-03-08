@@ -30,6 +30,7 @@
 		"quote_anchor": "USD",	    			#计价单位
 		"contract_anchor": "USD",   			#合约单位
 		"contract_value": "1.00000000",         	#单张合约价值
+		"pair": "BTC_USD",				#合约市场
 		"type": "1",					#合约类型，1:永续合约, 2:非永续合约
 		"expiry": "0000-00-00 00:00:00",        	#合约交割时间(非永续合约)
 		"max_leverage": "100",	                	#最大杠杆倍数
