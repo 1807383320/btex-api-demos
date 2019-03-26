@@ -24,7 +24,7 @@ Timestamp (ts):  UTC timestmap: such as 1544400608.
 
 How to Generate a Signature: 
 
-1，create request url
+1. create request url
 
 ```
 POST: https://api.btex.com/mx_openapi1/active_orders
@@ -32,7 +32,7 @@ POST: https://api.btex.com/mx_openapi1/active_orders
 Parameters: access_key=abcdefgh&contract_id=123456&sign=abcdefgh&ts=1544400608
 ```
 
-2，ksort the parameters
+2. ksort the parameters
 
 ```
 access_key=abcdefgh
@@ -54,7 +54,7 @@ use & to build the string (`tPreStr`):
 
 `access_key=abcdefgh&contract_id=123456&secret_key=abcdefgh&ts=1544400608`
 
-3.Use the string (`tPreStr`) to get HmacSHA256 signature(`hmac256_sign`)  ： 
+3. Use the string (`tPreStr`) to get HmacSHA256 signature(`hmac256_sign`)  ： 
 ```
 hash_hmac('sha256', $tPreStr, SECRET_KEY, TRUE);
 ```
