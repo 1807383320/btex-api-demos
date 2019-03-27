@@ -13,7 +13,9 @@ BTEX API domain https://api.btex.com https://api.btex.me
 
 ## Public API (Public data)
   
-COIN_ANCHOR examples: BTC_USDT ETH_USDT ETH_BTC 
+COIN_ANCHOR examples: BTC_USDT ETH_USDT ETH_BTC
+
+Request Limits: 10000 req/hour 10 req/second
 
 | url | function | description |
 | :--- | :--- | :--- |
