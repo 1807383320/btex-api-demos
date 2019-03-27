@@ -32,9 +32,3 @@ For security reason, most trading apis requires the signature for every requests
 | /openapi1/orderbook | get the market order book | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-orderbook)|
 |  /openapi1/trades?pair=COIN_ANCHOR | get market trade lists | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-trade-history)|
 | /openapi1/auth_api | operations for `get my info`, `buy`, `sell`, `get my orders`, `cancel orders`, `get my trade lists` | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-my-info)|
-
-c
-| /openapi1/auth_api | operations for `get my info`, `buy`, `sell`, `get my orders`, `cancel orders`, `get my trade lists` | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-my-info)|o
-| /openapi1/auth_api | operations for `get my info`, `buy`, `sell`, `get my orders`, `cancel orders`, `get my trade lists` | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-my-info)|n
-| /openapi1/auth_api | operations for `get my info`, `buy`, `sell`, `get my orders`, `cancel orders`, `get my trade lists` | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-my-info)|t
-| /openapi1/auth_api | operations for `get my info`, `buy`, `sell`, `get my orders`, `cancel orders`, `get my trade lists` | [detail](https://github.com/btex-dev/btex-api-demos/blob/master/exchange_restful_api_en.md#get-my-info)|
