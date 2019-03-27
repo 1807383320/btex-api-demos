@@ -2,7 +2,7 @@
 
 The btex.com exchange APIs consists of the apis for public datas and apis for trading operations. 
 
-btex.com also support Perpetual contract exchange. You can find the APIs here. [Perpetual contract APIs](https://github.com/btex-dev/btex-api-demos/tree/master/btex-mx-api-docs)
+btex.com also lists Perpetual contract pairs. You can find the APIs here. [Perpetual contract APIs](https://github.com/btex-dev/btex-api-demos/tree/master/btex-mx-api-docs)
 
 ## The Domain List
 
