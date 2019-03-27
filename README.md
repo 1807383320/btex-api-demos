@@ -1,8 +1,17 @@
-# BTEx exchange APIs
+The btex.com exchange APIs consists of the apis for public datas and apis for trading operations. 
 
-The BTEx exchange APIs consists of the apis for public datas and apis for trading operations. 
+btex.com also support Perpetual contract exchange. You can find the APIs here. [Perpetual contract APIs](https://github.com/btex-dev/btex-api-demos/tree/master/btex-mx-api-docs)
+
+## The Domain List
+
+BTEX website https://btex.com https://btex.me
+
+BTEX API domain https://api.btex.com https://api.btex.me
+
 
 ## Public API (Public data)
+  
+COIN_ANCHOR examples: BTC_USDT ETH_USDT ETH_BTC 
 
 | url | function | description |
 | :--- | :--- | :--- |
