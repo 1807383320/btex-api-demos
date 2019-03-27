@@ -6,7 +6,7 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 
 | Key | Data type | Description |
 | --- | --- | --- |
-| code | int | error code |
+| code | int | error code, code > 0 means success, <0 mean fail |
 | info | string | infomation for response |
 | data | Array | return data |
 
@@ -42,15 +42,15 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 			"sell_fee": "0.002000",
 			"status": "2",
 			"ticker": {
-				"min_24h_price": "3892.07",
-				"min_24h_time": "1553540670",
-				"max_24h_price": "3939.28",
+				"min_24h_price": "3892.07", //lowest in 24h
+				"min_24h_time": "1553540670", //
+				"max_24h_price": "3939.28", // highest in 24h
 				"max_24h_time": "1553590634",
-				"trade_price": "3930.84",
-				"price_24h": "3948.4250545775",
-				"change_24h": "-0.0045",
-				"amount": "2868.72459864",
-				"total": "11326903.943824"
+				"trade_price": "3930.84", // last trade price
+				"price_24h": "3948.4250545775", 
+				"change_24h": "-0.0045", //change 24h
+				"amount": "2868.72459864", // 24h trade amount, BTC
+				"total": "11326903.943824" // 24h trade total, USDT
 			}
 		}
 	}
@@ -61,7 +61,7 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 
 #### url
 
- `https://api.btex.com/openapi1/pairs`
+ `https://api.btex.com/openapi1/pair`
 
 #### method
 
@@ -91,15 +91,15 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 			"limit_down": "0.00",
 			"status": "2",
 			"ticker": {
-				"min_24h_price": "132.00",
+				"min_24h_price": "132.00", // 24h low
 				"min_24h_time": "1553540679",
-				"max_24h_price": "136.15",
+				"max_24h_price": "136.15", // 24h high
 				"max_24h_time": "1553508472",
-				"trade_price": "134.11",
+				"trade_price": "134.11", // last trade price
 				"price_24h": "134.34363040473",
-				"change_24h": "-0.0017",
-				"amount": "23123.52402027",
-				"total": "3106497.2654139"
+				"change_24h": "-0.0017", // change 24h
+				"amount": "23123.52402027", //24h trade amount, ETH
+				"total": "3106497.2654139" // 24h trade total, BTC
 			}
 		}
 	}
@@ -110,7 +110,7 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 
 #### url
 
- `https://api.btex.com/openapi1/pairs`
+ `https://api.btex.com/openapi1/k_data/`
 
 #### method
 
@@ -164,10 +164,10 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 	"info": "ok",
 	"data": {
 		"buy": [{
-			"price": "132.86",
-			"amount": "0.8363",
-			"total": "111.11",
-			"sum": "111.11"
+			"price": "132.86", // price 
+			"amount": "0.8363", // amount
+			"total": "111.11", // total
+			"sum": "111.11" // sum amount
 		}
 		...
 		],
@@ -212,9 +212,9 @@ All response datas are in json format, consists of three parts, `code`, `info`, 
 		"list": [{
 			"time": "1553594058",
 			"price": "133.92000000",
-			"num": "8.99430000",
-			"total": "1204.51665600",
-			"trade_info": "sell"
+			"num": "8.99430000", // trade amount
+			"total": "1204.51665600", // trade total
+			"trade_info": "sell" // buy or sell
 		}
 		...
 		],
